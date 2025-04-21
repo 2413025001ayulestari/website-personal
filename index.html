@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Ayu Lestari</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #fff1f7;
+      color: #3d2a31;
+      text-align: center;
+      background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+    }
+
+    header {
+      background: #ff66b2;
+      color: #fff;
+      padding: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      border: 8px double #ff3385;
+      border-radius: 20px;
+      margin: 20px;
+      box-shadow: 0 0 20px rgba(255, 102, 178, 0.6);
+      background-image: url('https://www.transparenttextures.com/patterns/flower-dust.png');
+      background-size: 200px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .info {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    nav {
+      background: #ff3385;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 15px 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffebf2;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      border: 4px dashed #ff3385;
+    }
+
+    .content:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #ff66b2;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    h2::before {
+      content: "🌸";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 24px;
+      animation: rotateFlower 4s infinite linear;
+    }
+
+    @keyframes rotateFlower {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 220px;
+      border-radius: 10px;
+      border: 4px solid #ff66b2;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba(255, 102, 178, 0.6);
+    }
+
+    .social-links a {
+      display: inline-block;
+      color: white;
+      font-size: 18px;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.05);
+    }
+
+    .instagram { background: #ff66b2; }
+    .linkedin { background: #d6a4cb; }
+    .youtube { background: #f06292; }
+
+    footer {
+      background: #ff66b2;
+      color: #fff;
+      padding: 20px;
+      font-weight: bold;
+      border-top: 6px dotted #ff3385;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e08fb8;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-wrap: wrap;
+    }
+
+    .task-item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      max-height: 300px;
+    }
+
+    .task-desc {
+      padding: 10px 20px;
+      flex: 1 1 100%;
+    }
+
+    .task-item::before {
+      content: "🌸";
+      position: absolute;
+      font-size: 50px;
+      top: -10px;
+      left: -10px;
+      opacity: 0.2;
+      animation: flowerAnimation 5s infinite;
+    }
+
+    @keyframes flowerAnimation {
+      0% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+      100% { opacity: 0.2; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 160px;
+      }
+
+      .task-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .task-item img {
+        width: 100%;
+        height: auto;
+      }
+
+      .task-desc {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to my portfolio!</h1>
+    <img src="foto profil.jpg" alt="Foto Profil Ayu Lestari" class="profile-img">
+    <h3>Let's get started!</h3>
+  </header>
+
+  <section class="content" data-aos="fade-up">
+    <p class="info"><strong>NAMA:</strong> AYU LESTARI</p>
+    <p class="info"><strong>NIP:</strong> 2413025001</p>
+    <p class="info"><strong>Program Studi:</strong> Pendidikan Teknologi Informasi</p>
+    <p class="info"><strong>Universitas:</strong> Universitas Lampung</p>
+  </section>
+
+  <nav>
+    <ul>
+      <li><a href="#about">Tentang Saya</a></li>
+      <li><a href="#tasks">Pengumpulan Tugas</a></li>
+      <li><a href="#social">Sosial Media</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section id="about" class="content" data-aos="fade-up">
+    <h2>Tentang Saya</h2>
+    <img src="foto profil.jpg" alt="Foto Profil Ayu Lestari" class="profile-img">
+    <p>Halo! Saya Ayu Lestari, seorang mahasiswa Pendidikan Teknologi Informasi. Halaman ini dibuat sebagai bagian dari tugas mata kuliah Grafika Komputer serta menjadi tempat untuk mengumpulkan tugas-tugas perkuliahan saya.</p>
+  </section>
+
+  <section id="tasks" class="content" data-aos="fade-up">
+    <h2>Pengumpulan Tugas</h2>
+    <div class="task-item">
+      <img src="foto toko printis.jpg" alt="Tugas 1">
+      <div class="task-desc">
+        <strong><a href="https://drive.google.com/drive/folders/1M9hk57gCnlvPsXF7lbSG-Fn-LhnDMijU">Tugas 1:</a></strong>
+        Tokoh Perintis Grafika Komputer
+      </div>
+    </div>
+    <div class="task-item">
+      <img src="foto garis dda.jpg" alt="Tugas 2">
+      <div class="task-desc">
+        <strong><a href="https://drive.google.com/drive/folders/1obWMN78MhPHL-q_tbxqqFvSnTNSXiekS">Tugas 2:</a></strong>
+        Algoritma Garis DDA dan Bresenham
+      </div>
+    </div>
+    <div class="task-item">
+      <img src="foto lingkaran.jpg" alt="Tugas 3">
+      <div class="task-desc">
+        <strong><a href="https://drive.google.com/drive/folders/1vIxn6sE8NCkbvCjm6zkDuGK5wCentTPv">Tugas 3:</a></strong>
+        Algoritma Pembentukan Lingkaran Bresenham dan Midpoint
+      </div>
+    </div>
+    <div class="task-item">
+      <img src="foto kurva.jpg" alt="Tugas 4">
+      <div class="task-desc">
+        <strong><a href="https://drive.google.com/drive/folders/1DBeU_cFOUFwflgQCD6iJ-xFjw1FXmBzJ">Tugas 4:</a></strong>
+        Algoritma Pembentukan Kurva
+      </div>
+    </div>
+  </section>
+
+  <section id="social" class="content" data-aos="fade-up">
+    <h2>Sosial Media</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com/ayu.lstr79" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.linkedin.com/in/ayu-lestari-1bbab9326" class="linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://youtube.com/@ayulestari-n3m" class="youtube"><i class="fab fa-youtube"></i> YouTube</a>
+    </div>
+  </section>
+
+  <section id="contact" class="content" data-aos="fade-up">
+    <h2>Hubungi Saya</h2>
+    <form action="https://formspree.io/f/mzzrprwy" method="POST">
+      <input type="text" name="nama" placeholder="Nama Lengkap" required>
+      <input type="email" name="email" placeholder="Alamat Email" required>
+      <textarea name="pesan" rows="4" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Portofolio Ayu Lestari</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
